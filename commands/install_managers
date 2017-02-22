@@ -8,6 +8,7 @@ function install_managers {
   if ! type "chruby" > /dev/null; then
     einf "Installing chruby"
     brew install chruby --HEAD
+    brew install ruby-install --HEAD
   fi
 
   if ! type "n" > /dev/null; then

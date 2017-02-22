@@ -1,6 +1,9 @@
 # Setup editor
 export EDITOR='code';
 
+# N
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+
 # Persistent REPL history for node
 export NODE_REPL_HISTORY=~/.node_history;
 
@@ -27,3 +30,6 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don't clear the screen after quitting a manual page
 export MANPAGER='less -X';
+
+# Sources for exports
+source /usr/local/opt/chruby/share/chruby/auto.sh
