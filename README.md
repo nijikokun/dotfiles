@@ -24,7 +24,7 @@ Clean dotfile configuration for any macbook.
 ## Install
 
 ```bash
-git clone repo ~/.dotfiles
+git clone https://github.com/nijikokun/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 make install
 ```
