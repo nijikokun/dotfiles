@@ -13,7 +13,18 @@ function install_cask {
   brew update
 
   einf "Installing brew cask packages"
-  cat $DOTFILES/casks | xargs brew cask install
+  cat $DOTFILES/casks | \
+  while read CASK; do
+    printf "Installing $CASK... "
+
+    if brew cask ls --versions $CASK > /dev/null 2>&1; then
+      printf "already installed\n"
+    else
+      printf "\n"
+      brew cask install $CASK
+    fi
+  done
+
 }
 
 askdo install_cask "Install brew cask packages?"
