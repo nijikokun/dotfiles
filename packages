@@ -1,0 +1,24 @@
+gcc
+gdb
+pcre
+pcre2
+libmpc
+libffi
+libpng
+librsvg
+libsigsegv
+libtool
+libxml2
+libxslt
+libyaml
+glib
+cask
+mpv
+zsh
+httpie
+moreutils
+findutils
+binutils
+gnu-sed --with-default-names
+nmap
+htop

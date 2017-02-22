@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# import helpers
+source `dirname $0`/helpers
+
+# Install brew
+function install_brew {
+  if type "brew" > /dev/null; then
+    einf "Brew already installed... skipping"
+    return
+  fi
+
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/master/install)"
+
+  if ! type "brew" > /dev/null; then
+    eerr "Brew failed to install"; exit 1
+  fi
+
+  einf "Brew installed successfully"
+}
+
+askdo install_brew "Install brew?"

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# import helpers
+source `dirname $0`/helpers
+
+# Install brew
+function install_cask {
+  if ! type "brew" > /dev/null; then
+    eerr "Brew must be installed first..."; exit 1
+  fi
+
+  einf "Updating brew"
+  brew update
+
+  einf "Installing brew cask packages"
+  cat $DOTFILES/casks | xargs brew cask install
+}
+
+askdo install_cask "Install brew cask packages?"

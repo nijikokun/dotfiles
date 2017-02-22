@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# import helpers
+source `dirname $0`/helpers
+
+# Install brew
+function setup_env {
+  einf "Linking shell configs"
+  ln -sF $DOTFILES/functions ~/.functions.sh
+  ln -sF $DOTFILES/exports ~/.exports.sh
+  ln -sF $DOTFILES/aliases ~/.aliases.sh
+  ln -sF $DOTFILES/antigen ~/.antigen.sh
+  ln -sF $DOTFILES/profile ~/.profile
+  ln -sF $DOTFILES/zshrc ~/.zshrc
+
+  einf "Linking application configs"
+  ln -sF $DOTFILES/hyper.js ~/.hyper.js
+
+  einf "Linking github configs"
+  ln -sF $DOTFILES/gitconfig ~/.gitconfig
+  ln -sF $DOTFILES/gitignore ~/.gitignore
+}
+
+askdo setup_env "Setup environment?"

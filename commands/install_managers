@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# import helpers
+source `dirname $0`/helpers
+
+# Install brew
+function install_managers {
+  if ! type "chruby" > /dev/null; then
+    einf "Installing chruby"
+    brew install chruby --HEAD
+  fi
+
+  if ! type "n" > /dev/null; then
+    einf "Installing n"
+    curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+  fi
+
+  if ! type "antigen" > /dev/null; then
+    einf "Installing antigen"
+    git clone https://github.com/zsh-users/antigen $VENDOR/zsh-antigen
+  fi
+}
+
+askdo install_managers "Install managers (n / chruby / antigen)?"

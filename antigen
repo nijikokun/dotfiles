@@ -1,0 +1,38 @@
+# Load antigen
+source $HOME/.vendor/zsh-antigen/antigen.zsh
+
+# Load oh-my-zsh
+antigen use oh-my-zsh
+
+# Default bundles
+antigen bundle git
+antigen bundle pip
+antigen bundle brew
+antigen bundle lein
+antigen bundle golang
+antigen bundle ember-cli
+antigen bundle emoji
+antigen bundle node
+antigen bundle npm
+antigen bundle rails
+antigen bundle gem
+antigen bundle chruby
+antigen bundle bundler
+antigen bundle docker
+antigen bundle dotenv
+antigen bundle gulp
+antigen bundle virtualenv
+antigen bundle virtualenvwrapper
+antigen bundle vagrant
+antigen bundle yarn
+antigen bundle z
+antigen bundle command-not-found
+
+# Syntax highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Apply
+antigen apply
+
+# Theme
+antigen theme tylerreckart/hyperzsh

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# import helpers
+source `dirname $0`/helpers
+
+# Install brew
+function setup_os {
+  einf "Configuring macOS"
+  sh $DOTFILES/macos
+}
+
+askdo setup_os "Setup os?"

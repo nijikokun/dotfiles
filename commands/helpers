@@ -1,0 +1,24 @@
+#!/bin/sh
+
+ROOT=~/
+VENDOR=~/.vendor
+DOTFILES=~/.dotfiles
+
+# Logging
+WARN='\033[0;31m'
+FG='\033[1;34m'
+NC='\033[0m'
+
+# Logging functions
+function ewrn { echo "${FG}[${WARN}!${FG}] ${1}${NC}"; }
+function eerr { echo "${FG}[${WARN}x${FG}] ${1}${NC}"; }
+function einf { echo "${FG}[i] ${1}${NC}"; }
+function eask { printf "${FG}[?] ${1} (y/n)${NC} "; }
+function link { ln -sF "$1" "$2"; }
+
+# Ask then take action function
+function askdo {
+  eask "$2"
+  read -r choice
+  case "$choice" in y|Y|yes|yeah ) $1; return;; esac
+}
