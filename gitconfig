@@ -2,6 +2,9 @@
     name = nijikokun
     email = nijikokun@gmail.com
 
+[core]
+    editor = 'vi'
+
 [color]
     ui = auto
 
