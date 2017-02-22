@@ -28,3 +28,37 @@ git clone repo ~/.dotfiles
 cd ~/.dotfiles
 make install
 ```
+
+## Commands
+
+- `make install`
+
+  Scratch mode. Go through all installation options.
+
+- `make install_brew`
+
+	Install brew
+
+- `make install_packages`
+
+	Tap sources & install brew packages
+
+- `make install_cask`
+
+	Install cask applications
+
+- `make install_managers`
+
+	Install language/package managers
+
+- `make install_python`
+
+	Install python (2/3) & virtualenv
+
+- `make setup_env`
+
+	Setup symlinks
+
+- `make setup_os`
+
+	Configure macOS settings & reload
