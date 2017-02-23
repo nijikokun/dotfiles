@@ -9,7 +9,7 @@ fi
 
 # System Management
 alias sudo='sudo '
-alias reload='exec $SHELL -l'
+alias reload='exec /bin/zsh -l'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
 alias flush='dscacheutil -flushcache && killall -HUP mDNSResponder'
 alias recycle="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
