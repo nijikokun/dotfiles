@@ -5,20 +5,26 @@ source `dirname $0`/helpers
 
 # Install brew
 function install_managers {
-  if ! type "chruby" > /dev/null; then
+  if [ ! type "chruby"  > /dev/null 2>&1 ]; then
     einf "Installing chruby"
     brew install chruby --HEAD
     brew install ruby-install --HEAD
+  else
+   printf "chruby already installed... skipping\n"
   fi
 
-  if ! type "n" > /dev/null; then
-    einf "Installing n"
-    curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
-  fi
-
-  if ! type "antigen" > /dev/null; then
+  if [ ! type "antigen"  > /dev/null 2>&1 ]; then
     einf "Installing antigen"
     git clone https://github.com/zsh-users/antigen $VENDOR/zsh-antigen
+  else
+   printf "antigen already installed... skipping\n"
+  fi
+
+  if [ ! type "n"  > /dev/null 2>&1 ]; then
+    einf "Installing n"
+    curl -L https://git.io/n-install | N_PREFIX=~/.n bash -s -- -y
+  else
+   printf "n already installed... skipping\n"
   fi
 }
 
