@@ -1,33 +1,41 @@
-# Clean dotfiles
+# Dotfiles
 
-Clean dotfile configuration for any macbook.
+🇺🇸 Make Dotfiles Great Again 🇺🇸
 
-# Programs
+## Why?
 
-- [Tools (brew)](packages)
-- [Sources (brew tap)](taps)
-- [Applications (cask)](casks)
-- Managers
-  - [antigen (oh-my-zsh)](antigen)
-  - n (node.js)
-  - chruby (ruby)
-  - virtualenv (python3/python2)
-- Symlinked files (no mess)
-  - [Profile](profile)
-  - [Exports](exports)
-  - [Aliases](aliases)
-  - [Functions](functions)
-  - [Hyperterm Configuration](hyper.js)
-  - [Github Configuration](gitconfig)
-- [OS Configuration](macos)
+- Symlinks to keep home directory clean
+- Easy commands to keep applications & tools up to date
+- Single location for configuration
+- Instant setups
+- Replicate environments
+- Data loss? No problem
 
-## Install
+## Installation
 
 ```bash
 git clone https://github.com/nijikokun/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 make install
 ```
+
+## What's Included?
+
+- [Tools list (brew)](packages)
+- [Sources list (brew tap)](taps)
+- [Applications list (brew cask)](casks)
+- [Profile Configuration](profile)
+- [Shell Exports](exports)
+- [Shell Aliases](aliases)
+- [Shell Functions](functions)
+- [Hyperterm Configuration](hyper.js)
+- [Github Configuration](gitconfig)
+- [OS Configuration](macos)
+- Language Managers
+  - [antigen (oh-my-zsh)](antigen)
+  - n (node.js)
+  - chruby (ruby)
+  - virtualenv (python3/python2)
 
 ## Commands
 
