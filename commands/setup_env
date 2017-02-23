@@ -15,6 +15,7 @@ function setup_env {
 
   einf "Linking application configs"
   ln -sF $DOTFILES/hyper.js ~/.hyper.js
+  ln -sF $DOTFILES/vimrc ~/.vimrc
 
   einf "Linking github configs"
   ln -sF $DOTFILES/gitconfig ~/.gitconfig
