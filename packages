@@ -7,7 +7,6 @@ libmpc
 libffi
 libpng
 librsvg
-libsigsegv
 libtool
 libxml2
 libxslt
@@ -23,3 +22,4 @@ binutils
 gnu-sed --with-default-names
 nmap
 htop
+z
