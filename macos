@@ -186,6 +186,13 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 	"Transmission" "Tweetbot" "Twitter" "iCal"; do
 	killall "${app}" &> /dev/null
 done
+
+# Clear icon cache and reboot dock / finder
+sudo find /private/var/folders/ -name com.apple.iconservices -exec rm -rf {} ;
+sudo rm -rf /Library/Caches/com.apple.iconservices.store
+killall Dock
+killall Finder
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 
