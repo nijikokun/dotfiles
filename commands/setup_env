@@ -17,6 +17,10 @@ function setup_env {
   ln -sF $DOTFILES/hyper.js ~/.hyper.js
   ln -sF $DOTFILES/vimrc ~/.vimrc
 
+  # VSCode Configuration File, attempt to remove existing settings and link ours
+  rm -f $HOME/Library/Application\ Support/Code/User/settings.json
+  ln -sF $DOTFILES/vscode.json $HOME/Library/Application\ Support/Code/User/settings.json
+
   einf "Linking github configs"
   ln -sF $DOTFILES/gitconfig ~/.gitconfig
   ln -sF $DOTFILES/gitignore ~/.gitignore
