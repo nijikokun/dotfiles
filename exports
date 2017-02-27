@@ -34,3 +34,6 @@ export MANPAGER='less -X';
 # Sources for exports
 source /usr/local/opt/chruby/share/chruby/auto.sh
 source /usr/local/etc/profile.d/z.sh
+
+# Path Sources
+path_append $HOME/.dotfiles/bin

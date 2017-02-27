@@ -1,0 +1,36 @@
+.TH dot 1 "02 FEB 2017" "version 1.0"
+
+.SH COMMAND
+.B dot [command] [args] [options]
+
+.SH DESCRIPTION
+
+Dotfile utility tool for managing and running dotfile commands without being in the 
+dotfile directory.
+
+.SH COMMANDS
+
+.IP \[bu] 2
+.B install [brew|cask|node|zsh]
+.I package
+.RS
+.in +2
+Installs the
+.B "specified package"
+.RB "using the specified package manager and updates"
+.RB "the dotfile after successful install."
+.RE
+.IP \[bu]
+.B uninstall [brew|cask|node|zsh]
+.I package
+.RS
+.in +2
+Uninstalls the
+.B "specified package"
+.RB "using the specified package manager and updates"
+.RB "the dotfile regardless of whether the uninstall succeeds."
+.RE
+
+.SH AUTHOR
+
+Nijiko Yonskai <nijikokun@gmail.com>

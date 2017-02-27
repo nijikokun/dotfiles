@@ -1,0 +1,76 @@
+source ~/.dotfiles/commands/helpers
+
+function display_help {
+  echo "$(cat $DOTFILES/bin/docs/dot | groff -Tascii -man)" | more
+}
+
+function is_cmd {
+  if [[ $1 -eq $2 ]] || [[ -z $3 && $1 -eq $3 ]]; then
+    return 1
+  fi
+
+  return 0
+}
+
+function do_install {
+  if [[ -z $1 ]]; then
+    echo "$(cat $DOTFILES/bin/docs/dot-install | groff -Tascii -man)" | more
+  fi
+
+  local package=$2
+
+  case $1 in
+    cask|c)
+      brew cask install "$package"
+      if [ $? -eq 0 ]; then
+        sed -i.bak "\$s/$/\n$package/" $DOTFILES/casks
+      fi
+      ;;
+    brew|b)
+      brew install "$package"
+      if [ $? -eq 0 ]; then
+        sed -i.bak "\$s/$/\n$package/" $DOTFILES/packages
+      fi
+      ;;
+    module|m)
+      printf "Installing module... $2\n"
+      ;;
+    plugin|pl)
+      printf "Installing plugin... $2\n"
+      ;;
+  esac
+}
+
+function do_uninstall {
+  local package=$2
+  case $1 in
+    cask|c)
+      sed -i.bak "/$package/d" $DOTFILES/casks
+      brew cask uninstall "$package"
+      ;;
+    brew|b)
+      sed -i.bak "/$package/d" $DOTFILES/packages
+      brew uninstall "$package"
+      ;;
+    node|n)
+      printf "Installing node... $2\n"
+      ;;
+    zsh|z)
+      printf "Installing zsh plugin... $2\n"
+      ;;
+  esac
+}
+
+# Commands
+
+if [ -z $1 ] || [[ $1 == "help" ]] || [[ $1 == "h" ]]; then
+  display_help
+fi
+
+if [[ $1 == "install" ]] || [[ $1 == "i" ]]; then
+  do_install $2 $3
+fi
+
+if [[ $1 == "uninstall" ]] || [[ $1 == "u" ]]; then
+  do_uninstall $2 $3
+fi
