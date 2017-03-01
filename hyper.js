@@ -66,7 +66,8 @@ module.exports = {
   plugins: [
     'hyperterm-blink',
     'hyperterm-tab-icons',
-    'hypercwd'
+    'hypercwd',
+    'hyperlinks'
   ],
 
   // in development, you can create a directory under
