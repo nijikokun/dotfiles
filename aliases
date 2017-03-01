@@ -32,6 +32,6 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with CTRL-D." && date && time cat && date'
 
 # Docker management
-alias docker-stop-all="docker stop $(docker ps -a -q)"
-alias docker-remove-all="docker rm $(docker ps -a -q)"
-alias docker-clean="docker-stop-all && docker-remove-all"
+alias docker-stop-all='docker stop $(docker ps -a -q)'
+alias docker-remove-all='docker rm $(docker ps -a -q)'
+alias docker-clean='docker-stop-all && docker-remove-all'
