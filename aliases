@@ -32,6 +32,36 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with CTRL-D." && date && time cat && date'
 
 # Docker management
-alias docker-stop-all='docker stop $(docker ps -a -q)'
-alias docker-remove-all='docker rm $(docker ps -a -q)'
-alias docker-clean='docker-stop-all && docker-remove-all'
+alias dp='docker ps'
+alias dpa='docker ps -a'
+alias dpaq='docker ps -a -q'
+alias di='docker images'
+alias diaq='docker images -a -q'
+alias dstop-all='docker stop $(dpaq)'
+alias drm-all='docker rm $(dpaq)'
+alias drmv-all='docker rm -v $(dpaq)'
+alias drmi-all='docker rmi $(diaq)'
+
+# Stop all images
+alias ddown='dstop-all && drm-all'
+
+# Clean all docker containers & images
+alias dclean='dstop-all && drm-all && drmi-all'
+
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="docker run -i -t -P"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="docker exec -i -t"
+
+# Bash into running container
+dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
+# Aliases
+aliases() { alias | grep $1 | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
