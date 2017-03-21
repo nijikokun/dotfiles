@@ -1,10 +1,19 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set nocompatible                        " vi-improved mode
 set hidden                              " cycle buffers without writing
 let mapleader=","                       " map leader to , because \ is too far away
 
-filetype off                            " Filetype management off
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-call plug#begin('~/.dotfiles/.vim/plugged')       " Start plugin block
+filetype off
+
+call plug#begin('~/.dotfiles/.vim/plugged')
+
 Plug 'flazz/vim-colorschemes'
 Plug 'tomasr/molokai'                   
 Plug 'sheerun/vim-polyglot'             
@@ -12,15 +21,20 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'posva/vim-vue'
 Plug 'wincent/command-t'
 Plug 'airblade/vim-gitgutter'
-call plug#end()                         " End plugin block
 
-" <<                       theming                         >>
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theming
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set number
 set background=dark
 colo hybrid_material
 
-" <<                     highlighting                      >>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlighting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 syntax enable
 syntax on
@@ -32,7 +46,9 @@ set hlsearch
 
 nnoremap <leader><space> :nohlsearch<CR>
 
-" <<                     indentation                       >>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set autoindent
 set smartindent
@@ -45,7 +61,9 @@ set expandtab
 filetype plugin on
 filetype indent on
 
-" <<                          vim                          >>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set showmode                            " show current mode at the bottom
 set autoread                            " reload files updated outside vim

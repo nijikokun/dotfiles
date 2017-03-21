@@ -21,21 +21,26 @@ make install
 
 ## What's Included?
 
-- [Tools list (brew)](packages)
-- [Sources list (brew tap)](taps)
-- [Applications list (brew cask)](casks)
-- [Profile Configuration](profile)
-- [Shell Exports](exports)
-- [Shell Aliases](aliases)
-- [Shell Functions](functions)
-- [Hyperterm Configuration](hyper.js)
-- [Github Configuration](gitconfig)
-- [OS Configuration](macos)
-- Language Managers
-  - [antigen (oh-my-zsh)](antigen)
-  - n (node.js)
-  - chruby (ruby)
-  - virtualenv (python3/python2)
+- [Tools list (brew)](pkgs/brew)
+- [Sources list (brew tap)](pkgs/taps)
+- [Applications list (brew cask)](pkgs/casks)
+- [VSCode Extensions (code)](pkgs/vscode)
+- [Profile Configuration](shell/profile)
+- [Shell Exports](shell/exports)
+- [Shell Aliases](shell/aliases)
+- [Shell Functions](shell/functions)
+- [Hyperterm Configuration](shell/hyper.js)
+- [Github Configuration](shell/gitconfig)
+- [OS Configuration](shell/macos)
+
+**Package Managers, Editors, and Tooling**
+
+- [antigen (oh-my-zsh)](shell/antigen)
+- [vscode](editors/vscode.json)
+- [vim](editors/vimrc)
+- n (node.js)
+- chruby (ruby)
+- [virtualenv (python3/python2)](commands/install_python)
 
 ## Commands
 
@@ -47,17 +52,21 @@ make install
 
 	Install brew
 
-- `make install_packages`
+- `make install_brew_packages`
 
 	Tap sources & install brew packages
 
-- `make install_cask`
+- `make install_casks`
 
 	Install cask applications
 
 - `make install_managers`
 
 	Install language/package managers
+
+- `make install_vscode_extensions`
+
+	Install [VSCode Extensions](pkgs/vscode)
 
 - `make install_python`
 

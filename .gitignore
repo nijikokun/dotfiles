@@ -1,3 +1,6 @@
 .DS_STORE
 *.bak
 virtualenvs
+.netrwhist
+plugged
+swp
