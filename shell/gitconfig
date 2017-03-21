@@ -3,7 +3,7 @@
     email = nijikokun@gmail.com
 
 [core]
-    editor = 'vi'
+	editor = /usr/bin/vim
 
 [color]
     ui = auto

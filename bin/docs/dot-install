@@ -17,6 +17,9 @@ install package using brew
 .BI cask " package"
 install package using cask
 .TP
+.BI code " package"
+install package using VSCode
+.TP
 .BI node " package"
 Installs node module globally
 .TP 
@@ -35,6 +38,8 @@ is:
 A brew package
 .IP \[bu] 2
 A cask package
+.IP \[bu] 2
+A vscode package
 .IP \[bu] 2
 A node package installed globally via yarn
 .IP \[bu] 2

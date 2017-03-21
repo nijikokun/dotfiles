@@ -6,24 +6,25 @@ source `dirname $0`/helpers
 # Install brew
 function setup_env {
   einf "Linking shell configs"
-  ln -sF $DOTFILES/functions ~/.functions.sh
-  ln -sF $DOTFILES/exports ~/.exports.sh
-  ln -sF $DOTFILES/aliases ~/.aliases.sh
-  ln -sF $DOTFILES/antigen ~/.antigen.sh
-  ln -sF $DOTFILES/profile ~/.profile
-  ln -sF $DOTFILES/zshrc ~/.zshrc
+  ln -sF $DOTFILES_SHELL/functions ~/.functions.sh
+  ln -sF $DOTFILES_SHELL/exports ~/.exports.sh
+  ln -sF $DOTFILES_SHELL/aliases ~/.aliases.sh
+  ln -sF $DOTFILES_SHELL/antigen ~/.antigen.sh
+  ln -sF $DOTFILES_SHELL/profile ~/.profile
+  ln -sF $DOTFILES_SHELL/zshrc ~/.zshrc
+  ln -sF $DOTFILES_SHELL/hyper.js ~/.hyper.js
 
-  einf "Linking application configs"
-  ln -sF $DOTFILES/hyper.js ~/.hyper.js
-  ln -sF $DOTFILES/vimrc ~/.vimrc
+  einf "Linking editor configs"
+  ln -sF $DOTFILES_EDITORS/.vim ~/
+  ln -sF $DOTFILES_EDITORS/vimrc ~/.vimrc
 
   # VSCode Configuration File, attempt to remove existing settings and link ours
-  rm -f $HOME/Library/Application\ Support/Code/User/settings.json
-  ln -sF $DOTFILES/vscode.json $HOME/Library/Application\ Support/Code/User/settings.json
+  mv $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings.json.bak
+  ln -sF $DOTFILES_EDITORS/vscode.json $HOME/Library/Application\ Support/Code/User/settings.json
 
   einf "Linking github configs"
-  ln -sF $DOTFILES/gitconfig ~/.gitconfig
-  ln -sF $DOTFILES/gitignore ~/.gitignore
+  ln -sF $DOTFILES_SHELL/gitconfig ~/.gitconfig
+  ln -sF $DOTFILES_SHELL/gitignore ~/.gitignore
 }
 
 askdo setup_env "Setup environment?"

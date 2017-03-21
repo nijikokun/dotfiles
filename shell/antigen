@@ -28,6 +28,9 @@ antigen bundle yarn
 antigen bundle z
 antigen bundle command-not-found
 
+# Suggestions (fish-like, thanks chris!)
+antigen bundle zsh-users/zsh-autosuggestions
+
 # Syntax highlighting
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -35,4 +38,4 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 # Theme
-antigen theme tylerreckart/hyperzsh
+antigen theme robbyrussell/oh-my-zsh themes/avit

@@ -27,6 +27,13 @@ function install_managers {
     printf "antigen already installed... skipping\n"
   fi
 
+  if [ ! type "vundle"  > /dev/null 2>&1 ]; then
+    einf "Installing vundle"
+    git clone https://github.com/VundleVim/Vundle.vim.git $VENDOR/zsh-antigen
+  else
+    printf "antigen already installed... skipping\n"
+  fi
+
   if [ type "npm" && ! type "yarn" > /dev/null 2>&1 ]; then
     einf "Installing yarn"
     npm i yarn -g

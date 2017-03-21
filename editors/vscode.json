@@ -2,4 +2,5 @@
 {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
+    "workbench.colorTheme": "Sublime Material Theme - Dark",
 }

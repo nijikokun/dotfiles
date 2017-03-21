@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# source helpers file
+source `dirname $0`/helpers
+
+# Install brew
+function uninstall_env {
+  einf "Unlinking shell configs"
+  rm -f ~/.functions.sh
+  rm -f ~/.exports.sh
+  rm -f ~/.aliases.sh
+  rm -f ~/.antigen.sh
+  rm -f ~/.profile
+  rm -f ~/.zshrc
+  rm -f ~/.hyper.js
+
+  einf "Unlinking editor configs"
+  rm -f ~/.vim
+  rm -f ~/.vimrc
+  rm -f $HOME/Library/Application\ Support/Code/User/settings.json
+
+  einf "Linking github configs"
+  rm -f ~/.gitconfig
+  rm -f ~/.gitignore
+}
+
+askdo uninstall_env "Unlink environment files?"

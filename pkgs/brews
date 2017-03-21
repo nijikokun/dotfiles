@@ -23,3 +23,6 @@ gnu-sed --with-default-names
 nmap
 htop
 z
+packer
+mongodb
+awscli

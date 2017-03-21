@@ -4,7 +4,7 @@
 source `dirname $0`/helpers
 
 # Install brew
-function install_packages {
+function install_brew_packages {
   if ! type "brew" > /dev/null; then
     eerr "Brew must be installed first..."; exit 1
   fi
@@ -13,10 +13,10 @@ function install_packages {
   brew update
 
   einf "Tapping brews"
-  cat $DOTFILES/taps | xargs brew tap
+  cat $TAP_PACKAGES | xargs brew tap
 
   einf "Installing brew packages"
-  cat $DOTFILES/packages | xargs brew install
+  cat $BREW_PACKAGES | xargs brew install
 }
 
-askdo install_packages "Install brew packages?"
+askdo install_brew_packages "Install brew packages?"

@@ -1,0 +1,57 @@
+set nocompatible                        " vi-improved mode
+set hidden                              " cycle buffers without writing
+let mapleader=","                       " map leader to , because \ is too far away
+
+filetype off                            " Filetype management off
+
+call plug#begin('~/.dotfiles/.vim/plugged')       " Start plugin block
+Plug 'flazz/vim-colorschemes'
+Plug 'tomasr/molokai'                   
+Plug 'sheerun/vim-polyglot'             
+Plug 'othree/javascript-libraries-syntax.vim' 
+Plug 'posva/vim-vue'
+Plug 'wincent/command-t'
+Plug 'airblade/vim-gitgutter'
+call plug#end()                         " End plugin block
+
+" <<                       theming                         >>
+
+set number
+set background=dark
+colo hybrid_material
+
+" <<                     highlighting                      >>
+
+syntax enable
+syntax on
+
+set cursorline
+set showmatch
+set incsearch
+set hlsearch
+
+nnoremap <leader><space> :nohlsearch<CR>
+
+" <<                     indentation                       >>
+
+set autoindent
+set smartindent
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+filetype plugin on
+filetype indent on
+
+" <<                          vim                          >>
+
+set showmode                            " show current mode at the bottom
+set autoread                            " reload files updated outside vim
+set wildmenu
+set showcmd                             " show incomplete cmd in bottom bar
+set lazyredraw                          " enable lazy drawing
+set directory^=$HOME/.vim/swp           " vim swp / tmp directory
+set visualbell                          " disable sounds
+set gcr=a:blinkon0                      " disable cursor blinking

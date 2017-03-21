@@ -23,15 +23,20 @@ function do_install {
     cask|c)
       brew cask install "$package"
       if [ $? -eq 0 ]; then
-        sed -i.bak "\$s/$/\n$package/" $DOTFILES/casks
+        sed -i.bak "\$s/$/\n$package/" $CASK_PACKAGES
       fi
       ;;
     brew|b)
       brew install "$package"
       if [ $? -eq 0 ]; then
-        sed -i.bak "\$s/$/\n$package/" $DOTFILES/packages
+        sed -i.bak "\$s/$/\n$package/" $BREW_PACKAGES
       fi
       ;;
+    code|co)
+      code --install-extension "$package"
+      if [ $? -eq 0 ]; then
+        sed -i.bak "\$s/$/\n$package/" $CODE_PACKAGES
+      fi
     module|m)
       printf "Installing module... $2\n"
       ;;
@@ -46,13 +51,16 @@ function do_uninstall {
 
   case $1 in
     cask|c)
-      sed -i.bak "/$package/d" $DOTFILES/casks
+      sed -i.bak "/$package/d" $CASK_PACKAGES
       brew cask uninstall "$package"
       ;;
     brew|b)
-      sed -i.bak "/$package/d" $DOTFILES/packages
+      sed -i.bak "/$package/d" $BREW_PACKAGES
       brew uninstall "$package"
       ;;
+    code|co)
+      sed -i.bak "/$package/d" $CODE_PACKAGES
+      code --uninstall-extension "$package"
     node|n)
       printf "Installing node... $2\n"
       ;;
