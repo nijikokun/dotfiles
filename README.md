@@ -79,3 +79,7 @@ make install
 - `make setup_os`
 
 	Configure macOS settings & reload
+
+- `make uninstall_env`
+
+	Remove all symlinks that were created
