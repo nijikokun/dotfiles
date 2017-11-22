@@ -16,29 +16,31 @@ function install_python {
   brew install autoenv
 
   einf "Upgrading pip"
-  pip install --upgrade pip
-  pip install --upgrade setuptools
+  pip3 install --upgrade pip
+  pip3 install --upgrade setuptools
 
   einf "Installing virtualenv"
-  pip install virtualenv
-  pip install virtualenvwrapper
+  pip3 install virtualenv
+  pip3 install virtualenvwrapper
 
-  rm virtualenvs
+  rm -rf ~/.virtualenvs
+  rm -rf virtualenvs
   mkdir virtualenvs
   ln -sF $DOTFILES/virtualenvs ~/.virtualenvs
 
+  export VIRTUALENVWRAPPER_PYTHON=`which python3`
   source /usr/local/bin/virtualenvwrapper.sh
 
   mkvirtualenv --python=`which python3` venv
   workon venv
 
   export PIP_REQUIRE_VIRTUALENV=true
-  export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip
+  export PIP_DOWNLOAD_CACHE=$HOME/Library/Caches/pip3
 
   einf "Installing packages"
-  pip install awsebcli
-  pip install powerline-status
-  pip install pyodbc
+  pip3 install awsebcli
+  pip3 install powerline-status
+  pip3 install pyodbc
 }
 
 askdo install_python "Install python?"

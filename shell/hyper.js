@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, DejaVu Sans Mono, Lucida Console, monospace',
@@ -10,7 +10,7 @@ module.exports = {
     cursorColor: 'rgba(248,28,229,0.75)',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'beam',
+    cursorShape: 'UNDERLINE',
 
     // color of the text
     foregroundColor: '#fff',
@@ -22,13 +22,13 @@ module.exports = {
     borderColor: '#333',
 
     // custom css to embed in the main window
-    css: '',
+    css: '* { -webkit-font-smoothing: antialiased; }',
 
     // custom css to embed in the terminal window
-    termCSS: '',
+    termCSS: '* { -webkit-font-smoothing: antialiased !important; }',
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '0',
+    padding: '5px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
@@ -69,7 +69,7 @@ module.exports = {
     'hypercwd',
     'hyperlinks',
     'hyper-statusline',
-    'hyperterm-base16-tomorrow-night'
+    'hyper-snazzy'
   ],
 
   // in development, you can create a directory under

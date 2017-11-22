@@ -8,9 +8,8 @@ path_append() {
 }
 
 path_prepend() {
-  for ((i=$#; i>0; i--)); 
+  for ARG in "$@"
   do
-    ARG=${!i}
     if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
         PATH="$ARG${PATH:+":$PATH"}"
     fi

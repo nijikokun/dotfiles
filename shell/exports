@@ -20,6 +20,9 @@ export NODE_REPL_MODE='sloppy';
 # Make python use UTF-8 encoding for output to stdin, stdout, and stderr
 export PYTHONIOENCODING='UTF-8';
 
+# Python VirtualEnv Pathing
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
+
 # Bash configuration
 export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
@@ -35,9 +38,17 @@ export LESS_TERMCAP_md="${yellow}";
 # Don't clear the screen after quitting a manual page
 export MANPAGER='less -X';
 
+# Disable KONG Reporting
+export KONG_ANONYMOUS_REPORTS=false;
+
 # Sources for exports
 source /usr/local/opt/chruby/share/chruby/auto.sh
 source /usr/local/etc/profile.d/z.sh
 
+# Travis
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
 # Path Sources
+path_prepend /usr/local/bin
+path_append /usr/local/MacGPG2/bin
 path_append $HOME/.dotfiles/bin
