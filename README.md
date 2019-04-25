@@ -21,7 +21,7 @@ make install
 
 ## What's Included?
 
-- [Tools list (brew)](pkgs/brew)
+- [Tools list (brew)](pkgs/brews)
 - [Sources list (brew tap)](pkgs/taps)
 - [Applications list (brew cask)](pkgs/casks)
 - [VSCode Extensions (code)](pkgs/vscode)
